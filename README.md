@@ -1,7 +1,7 @@
 # unity-docs
 ## Documentation for UNITY data flow and analysis 
 
-To view documentation click on the files listed above. Please contribute any feedback that may be useful for future reference. Any issues, questions, querries can be raised by using the 'issues' tab at the top. This will open a discussion on that topic and will enable us to work towards a solution.
+To view documentation click on the files listed above. Please contribute any feedback that may be useful for future reference. Any issues, questions, queries can be raised by using the 'issues' tab at the top. This will open a discussion on that topic and will enable us to work towards a solution.
 
 ### Contents:
 - UNITY data naming SOP
@@ -64,7 +64,7 @@ outputs/
 
 **Metadata:** 
 
-Metadata should be inlcude in the gear run to provide information about the processing steps and outputs. The config options should be captured automatically. Logs will be provided by the gear runtime environment. 
+Metadata should be included in the gear run to provide information about the processing steps and outputs. The config options should be captured automatically. Logs will be provided by the gear runtime environment. 
 Run labels can be added to provide additional information to make parsing output easier
 - gear_name
 - Timestamp
@@ -127,13 +127,15 @@ CMD ["python", "run.py"]
 ## 4. Gear Versioning
 Semantic Versioning (SemVer):
 
-Use the format MAJOR.MINOR.PATCH.
-MAJOR: Breaking changes (e.g., new parameters or outputs).
-MINOR: Backward-compatible new features.
-PATCH: Bug fixes or optimizations.
-Example: 
-```1.2.0```
+Use the format ```MAJOR.MINOR.PATCH```.
+- MAJOR: Breaking changes (e.g., new parameters or outputs).
+- MINOR: Backward-compatible new features.
+- PATCH: Bug fixes or optimizations.
 
+Example: 
+- Bug fixes: Update from ```1.2.0``` to ```1.2.1```
+- Adding a new feature: Update from ```1.2.0``` to ```1.3.0```
+- Breaking changes: Update from ```1.2.0``` to ```2.2.0```
 
 **Manifest Version Sync:**
 Ensure the version field in manifest.json matches the image tag version in the file.
@@ -167,7 +169,7 @@ Fill out the manifest.json file thoroughly:
 }
 ```
 
-Inputs:
+*Inputs*:
 
 Define inputs clearly:
 
@@ -182,7 +184,7 @@ Define inputs clearly:
   }
 }
 ```
-Config Options:
+*Config Options*:
 
 Include optional configuration parameters:
 ```json
@@ -193,7 +195,7 @@ Include optional configuration parameters:
   }
 }
 ```
-Outputs:
+*Outputs*:
 
 Define output file types and descriptions:
 ```json
@@ -217,24 +219,27 @@ Example labels:
 ```
 
 ## 7. Testing the Gear
-Unit Tests:
+
+*Unit Tests*:
 
 Write unit tests for modular functions in /tests/.
-Integration Tests:
+
+*Integration Tests*:
 
 Test the full gear locally:
 ```bash
 docker run --rm -v /path/to/input:/flywheel/v0/input -v /path/to/output:/flywheel/v0/output mygear:1.2.0
 ```
-Continuous Integration:
+*Continuous Integration*:
 
 Use GitHub Actions or similar tools to automate testing.
 
 ## 8. Quality Assurance Checklist
 Before deploying the gear:
 
-Validation: Run against multiple test datasets to ensure consistent outputs.
-Documentation: Update README.md with usage examples.
+- **Validation**: Run against multiple test datasets to ensure consistent outputs.
+- **Documentation**: Update README.md with usage examples.
+
 By adhering to these practices, your Flywheel gear will be reliable, maintainable, and user-friendly for the wider research community.
 
 
@@ -243,7 +248,7 @@ By adhering to these practices, your Flywheel gear will be reliable, maintainabl
 # Code Organization and Version Control with GitHub
 
 Repository Structure
-1.	Follow recomendation for Gear
+1.	Follow recommendation for Gear
 ```bash
 /gear/                   # Root of the gear structure
     ├── Dockerfile       # Docker image build instructions
@@ -263,7 +268,7 @@ Repository Structure
 
 ```
 
-**Branching Strategy:**
+**Branching Strategy**
 - Use a main branch for production code.  
 - Use feature branches (e.g., feature/new_analysis) for development.  
 - Implement a pull-request review process for merging.  
@@ -276,17 +281,18 @@ Repository Structure
 - Use proper documentation for every shared function (e.g., docstrings, README files).
 
 
-# Collaboration Under Dev Teams Practices
-- Defined Roles and Responsibilities:
+**Collaboration Under Dev Teams Practices**
+
+Defined Roles and Responsibilities
 - Review contributions, and ensure adherence to coding standards.
 - Analysis Teams (sites) implement pipelines and provide feedback to the Dev Team.
 - Include technical deep-dives monthly to review shared code updates.
 - Maintain a shared Confluence/Wiki to centralize best practices, FAQs, and troubleshooting guides.
 
 ### General Best Practices
-•	Adhere to FAIR principles (Findable, Accessible, Interoperable, Reusable).
-•	Always test and validate pipelines before deploying to partner sites.
-•	Encourage feedback and collaboration across all teams to foster innovation.
+- Adhere to FAIR principles (Findable, Accessible, Interoperable, Reusable).
+- Always test and validate pipelines before deploying to partner sites.
+- Encourage feedback and collaboration across all teams to foster innovation.
 
 ### Partner Site Communication Practices
 Unified Messaging:
